@@ -24,4 +24,5 @@ svg{display:block;max-width:100%}
 .num{font-family:var(--font-head);font-style:italic;font-weight:500;font-variant-numeric:tabular-nums}
 .link{text-decoration:none;background:linear-gradient(currentColor,currentColor) left bottom/0 1px no-repeat;transition:background-size var(--dur-base) var(--ease-out)}
 .link:hover{background-size:100% 1px}
+html.motion{scroll-behavior:auto}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}

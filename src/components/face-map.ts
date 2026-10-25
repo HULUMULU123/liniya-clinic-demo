@@ -3,7 +3,6 @@ import zones from '../data/zones.json';
 import procedures from '../data/procedures.json';
 import { store } from '../store';
 import { plural, rub } from '../format';
-import { drawFace } from './reveal';
 
 type Proc = (typeof procedures)[number];
 const countLabel = (n: number) => `${n} ${plural(n, 'процедура', 'процедуры', 'процедур')}`;
@@ -28,7 +27,7 @@ export function initFaceMap() {
   function svgView(): View {
     faceEl.classList.remove('is-3d');
     faceEl.innerHTML = faceSvg;
-    drawFace(faceEl);
+    if (document.documentElement.classList.contains('anim')) import('./motion').then((m) => m.drawFace(faceEl));
     const groups = new Map<string, SVGGElement>();
     faceEl.querySelectorAll<SVGGElement>('g[id^="zone-"]').forEach((g) => {
       const id = g.id.replace('zone-', '');

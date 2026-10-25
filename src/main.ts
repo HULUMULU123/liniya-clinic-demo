@@ -11,7 +11,6 @@ import { initJournal } from './components/journal';
 import { initGlossary } from './components/glossary';
 import { initWeather } from './components/weather';
 import { initBooking } from './components/booking';
-import { initReveal } from './components/reveal';
 import { initHeader } from './components/header';
 import { config } from './config';
 
@@ -43,4 +42,15 @@ initMobileBar();
 initBooking();
 initHeader();
 initWeather();
-initReveal();
+// стартовые состояния для анимаций: римские цифры в маске, блоки секций скрыты до появления
+if (document.documentElement.classList.contains('anim')) {
+  document.querySelectorAll<HTMLElement>('.roman').forEach((r) => { r.innerHTML = `<span>${r.textContent}</span>`; });
+  document.querySelectorAll<HTMLElement>('.sec-head .sub,.sec-head .kicker,.cards>li,.gloss-tools,.steps>li,.team>li,.faq,.contacts-grid>*:not(:first-child),.plan-sec,.map-grid,.addr,.sample-note').forEach((t) => t.classList.add('reveal'));
+}
+// анимации GSAP: отдельный чанк после загрузки; если не подгрузился, прячущие стили снимаются
+const root = document.documentElement;
+if (root.classList.contains('anim')) {
+  const giveUp = setTimeout(() => root.classList.remove('anim'), 6000);
+  const load = () => import('./components/motion').then((m) => { clearTimeout(giveUp); m.initMotion(); document.dispatchEvent(new Event('motion-ready')); }).catch(() => root.classList.remove('anim'));
+  if (document.readyState === 'complete') load(); else addEventListener('load', load, { once: true });
+}

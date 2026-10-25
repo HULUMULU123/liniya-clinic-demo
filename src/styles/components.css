@@ -186,45 +186,28 @@ body.drawer-open{overflow:hidden}
 .book-plan{font-size:.9375rem}
 .msg{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);padding:var(--s4);font:.875rem/1.6 var(--font-body);margin:var(--s4) 0}
 
-/* анимации «Атласа»: только transform, opacity, stroke-dashoffset, fill-opacity */
+/* анимации «Атласа»: начальные состояния; движение делает GSAP (motion.ts). Только transform, opacity, stroke-dashoffset, fill-opacity */
 html.anim .ln{overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
 html.anim .ln>span{display:block;animation:lineup 1000ms var(--ease-out) both}
 html.anim .ln:nth-of-type(2)>span{animation-delay:100ms}
 @keyframes lineup{from{transform:translateY(105%)}}
 html.anim .roman{display:block;overflow:hidden}
-html.anim .roman>span{display:block;transform:translateY(105%);transition:transform 900ms var(--ease-out)}
-html.anim .sec-head.in .roman>span{transform:none}
-html.anim .reveal{opacity:0;transform:translateY(24px);transition:opacity 600ms var(--ease-out) var(--rd,0ms),transform 600ms var(--ease-out) var(--rd,0ms)}
-html.anim .reveal.in{opacity:1;transform:none}
+html.anim .roman>span{display:block}
+html.anim .sec-head h2{visibility:hidden}
+html.anim .plate-text .kicker,html.anim .plate-text .lead,html.anim .plate-text .actions,html.anim #obs{opacity:0}
+html.anim .sec-head .sub{opacity:0}
+html.anim #still-legend li{will-change:auto}
+html.anim .reveal{opacity:0}
 html.anim .sec{border-top-color:transparent;position:relative}
-html.anim .sec::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--line);transform:scaleX(0);transform-origin:left;transition:transform 900ms var(--ease-out)}
-html.anim .sec.in::before{transform:none}
-html.anim .plate-sec::before,html.anim .moss-sec::before{display:none}
-
-html.anim #still-life.draw [pathLength]{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1600ms ease-in-out var(--dd,0ms) forwards}
-html.anim #still-life.draw .ground,html.anim #still-life.draw .item,html.anim #still-life.draw .leaders{--dd:var(--d)}
-html.anim #still-life.draw .leaders [pathLength]{animation-duration:600ms;animation-delay:calc(var(--d) + 1400ms)}
-html.anim #still-life.draw .leaders circle:not([pathLength]),html.anim #still-life.draw .leaders text{opacity:0;animation:fade 300ms ease-out calc(var(--d) + 2000ms) forwards}
-html.anim #still-life.draw [fill]:not([fill="none"]){fill-opacity:var(--fo,1);animation:draw 1600ms ease-in-out var(--dd,0ms) forwards,fillin 500ms ease-out calc(var(--dd,0ms) + 1300ms) backwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes fade{to{opacity:1}}
-@keyframes fillin{from{fill-opacity:0}}
-
-html.anim .face.face-draw #face-lines path{stroke-dasharray:1;stroke-dashoffset:1}
-html.anim .face.face-draw g[id^="zone-"]{opacity:0}
-html.anim .face.face-go #face-lines path{animation:draw 1600ms ease-in-out forwards}
-html.anim .face.face-go #face-lines path:nth-child(2){animation-delay:120ms}
-html.anim .face.face-go #face-lines path:nth-child(n+3){animation-delay:240ms}
-html.anim .face.face-go #face-lines path:nth-child(n+6){animation-delay:360ms}
-html.anim .face.face-go #face-lines path:nth-child(n+9){animation-delay:480ms}
-html.anim .face.face-go g[id^="zone-"]{animation:fade 400ms ease-out 1900ms forwards}
-html.anim .face.is-3d canvas{animation:fade 700ms ease-out both}
-
+.sec-line{position:absolute;top:0;left:0;right:0;height:1px;background:var(--line);transform-origin:left}
+html.anim #still-life:not(.ready) svg{visibility:hidden}
+html.anim .face:not(.ready):not(.is-3d) svg{visibility:hidden}
+@keyframes fadein{from{opacity:0}}
+html.anim .face.is-3d canvas{animation:fadein 700ms ease-out both}
 .steps-fill{position:absolute;left:-1px;top:0;bottom:0;width:2px;background:var(--accent);transform-origin:top;transform:scaleY(0)}
 html:not(.anim) .steps-fill{display:none}
 .wordmark{display:inline-block;transform-origin:left center;transition:transform var(--dur-base) var(--ease-out)}
 .site-header.scrolled .wordmark{transform:scale(.88)}
 .booking .drawer{max-width:420px}
-@media (prefers-reduced-motion:reduce){.reveal,.sec::before{transition:none!important}}
 @keyframes fadein{from{opacity:0}}
 html.anim .face.is-3d canvas{animation:fadein 700ms ease-out both}
