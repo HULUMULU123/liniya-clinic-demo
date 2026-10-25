@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 580" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- Таблица А. Натюрморт ухода: все линии 1.5 px, pathLength=1 для прорисовки -->
+  <g class="ground"><path pathLength="1" d="M36 478H484"/><path pathLength="1" d="M60 490H300M340 490H440" opacity=".5"/></g>
+
+  <g class="item" data-n="4" transform="translate(-22 18)"><!-- лист -->
+    <path pathLength="1" d="M52 270C46 188 98 124 190 108C204 188 150 262 52 270Z" fill="var(--moss-wash)" fill-opacity=".55"/>
+    <path pathLength="1" d="M52 270C96 222 138 172 172 126"/>
+    <path pathLength="1" d="M92 232C100 214 118 198 134 190M112 206C112 192 120 178 132 168M128 182C142 188 154 190 166 188M74 250C86 246 100 244 116 246"/>
+  </g>
+
+  <g class="item" data-n="3"><!-- солнце -->
+    <circle pathLength="1" cx="410" cy="118" r="32" fill="var(--rose)" fill-opacity=".35"/>
+    <path pathLength="1" d="M410 66V82M410 154V170M358 118H374M446 118H462M373 81L384 92M436 144L447 155M447 81L436 92M384 144L373 155"/>
+  </g>
+
+  <g class="item" data-n="1"><!-- флакон с пипеткой -->
+    <path pathLength="1" d="M168 196C168 176 176 160 186 160C196 160 204 176 204 196V250H168Z"/>
+    <path pathLength="1" d="M158 250H214V272H158Z"/>
+    <path pathLength="1" d="M170 272H202V296C226 302 238 320 238 344V452C238 466 228 476 214 476H158C144 476 134 466 134 452V344C134 320 146 302 170 296Z"/>
+    <path pathLength="1" d="M134 332H238" stroke-dasharray="3 5" opacity=".7"/>
+    <path pathLength="1" d="M186 252V318" opacity=".55"/>
+    <path pathLength="1" d="M152 380H220V440H152Z" fill="var(--paper)"/>
+    <path pathLength="1" d="M162 396H210M162 410H196M162 424H204" opacity=".7"/>
+    <path pathLength="1" d="M168 200H204M168 212H204" opacity=".5"/>
+  </g>
+
+  <g class="item" data-n="2"><!-- баночка -->
+    <path pathLength="1" d="M262 396C262 388 266 384 274 384H378C386 384 390 388 390 396V462C390 470 384 476 376 476H276C268 476 262 470 262 462Z"/>
+    <path pathLength="1" d="M254 350C254 342 258 338 266 338H386C394 338 398 342 398 350V384H254Z" fill="var(--rose)" fill-opacity=".3"/>
+    <path pathLength="1" d="M270 338V384M286 338V384M302 338V384M318 338V384M334 338V384M350 338V384M366 338V384M382 338V384" opacity=".4"/>
+    <path pathLength="1" d="M284 424C300 416 352 416 368 424" opacity=".7"/>
+    <path pathLength="1" d="M284 442C300 434 352 434 368 442" opacity=".7"/>
+  </g>
+
+  <g class="item" data-n="5"><!-- ампула -->
+    <path pathLength="1" d="M452 296C448 296 446 304 446 314V344C434 354 430 366 430 380V442C430 462 442 476 458 476C474 476 486 462 486 442V380C486 366 482 354 470 344V314C470 304 468 296 464 296Z" transform="translate(-4 -12)"/>
+    <path pathLength="1" d="M430 400H486" transform="translate(-4 -12)" stroke-dasharray="3 5" opacity=".7"/>
+    <path pathLength="1" d="M446 344H470" transform="translate(-4 -12)" opacity=".5"/>
+  </g>
+
+  <g class="item drop"><path pathLength="1" d="M318 232C308 248 304 256 304 264C304 274 310 280 318 280C326 280 332 274 332 264C332 256 328 248 318 232Z" fill="var(--rose)" fill-opacity=".45"/></g>
+
+  <!-- выносные линии -->
+  <g class="leaders" stroke-width="1">
+    <path pathLength="1" d="M186 160V74"/><circle cx="186" cy="62" r="14"/><text x="186" y="68.0" class="n">1</text>
+    <path pathLength="1" d="M326 476V524"/><circle cx="326" cy="536" r="14"/><text x="326" y="542.0" class="n">2</text>
+    <path pathLength="1" d="M410 86V56"/><circle cx="410" cy="44" r="14"/><text x="410" y="50.0" class="n">3</text>
+    <path pathLength="1" d="M44 200L40 124"/><circle cx="40" cy="112" r="14"/><text x="40" y="118.0" class="n">4</text>
+    <path pathLength="1" d="M454 476V524"/><circle cx="454" cy="536" r="14"/><text x="454" y="542.0" class="n">5</text>
+  </g>
+</svg>

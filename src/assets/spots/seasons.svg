@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle pathLength="1" cx="60" cy="60" r="42"/>
+<path pathLength="1" d="M60 18V102M18 60H102"/>
+<path pathLength="1" d="M60 60L89.7 30.3" opacity=".5"/>
+<path pathLength="1" d="M76 36C70 30 64 32 62 38C68 42 74 42 76 36Z" fill="var(--rose)" fill-opacity=".5"/>
+<path pathLength="1" d="M38 84C34 76 38 70 44 70C48 76 46 82 38 84Z" fill="var(--moss-wash)" fill-opacity=".8"/>
+<circle pathLength="1" cx="82" cy="82" r="6" fill="var(--rose)" fill-opacity=".4"/>
+<path pathLength="1" d="M34 40V32M30 36H38"/>
+</svg>

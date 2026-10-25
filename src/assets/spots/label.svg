@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path pathLength="1" d="M40 24H80V34H84C86 34 88 36 88 38V100C88 102 86 104 84 104H36C34 104 32 102 32 100V38C32 36 34 34 36 34H40Z"/>
+<path pathLength="1" d="M40 24C40 18 80 18 80 24"/>
+<path pathLength="1" d="M42 54H78V88H42Z" fill="var(--moss-wash)" fill-opacity=".6"/>
+<path pathLength="1" d="M48 63H72M48 71H66M48 79H70" opacity=".8"/>
+</svg>
