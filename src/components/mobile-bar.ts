@@ -16,6 +16,6 @@ export function initMobileBar() {
     info.textContent = `План: ${count} ${plural(count, 'процедура', 'процедуры', 'процедур')} · от ${rub(total)}`;
     sync();
   });
-  const hero = document.getElementById('plate')!;
+  const hero = document.getElementById('top')!;
   new IntersectionObserver((en) => { inHero = en[0].intersectionRatio > 0.5; sync(); }, { threshold: [0, 0.6, 1] }).observe(hero);
 }

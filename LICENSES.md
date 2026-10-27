@@ -1,6 +1,6 @@
 # Лицензии
 
-- MediaPipe `canonical_face_model.obj` — Apache License 2.0, google-ai-edge/mediapipe. Источник пропорций для `scripts/build-face.mjs` и `scripts/build-mesh.mjs`.
-- Three.js — MIT.
-- Шрифты Cormorant Garamond и Manrope — SIL OFL 1.1 (через `@fontsource`).
-- Иллюстрации (натюрморт, споты) нарисованы для проекта.
+- Three.js (MIT), GSAP и его плагины (бесплатная лицензия GSAP).
+- Шрифты Dela Gothic One и Manrope: SIL OFL 1.1 (через `@fontsource`).
+- 3D-иллюстрации галереи построены кодом в `src/three/` (процедурная геометрия, окружение RoomEnvironment из примеров three.js, MIT).
+- Портрет героини (`src/assets/img/girl.webp`) предоставлен заказчиком; фон вырезан скриптом.

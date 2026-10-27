@@ -9,145 +9,132 @@
 <meta property="og:title" content="Демо сайта клиники">
 <meta property="og:description" content="Показываем план и цену до визита">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#070707">
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('anim')</script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 27L16 5l10 22' fill='none' stroke='%23A4543C' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preload" href="/src/assets/fonts/manrope-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23070707'/%3E%3Cpath d='M7 25L16 6l9 19' fill='none' stroke='%23ff4d9d' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" href="/src/assets/fonts/dela-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/src/assets/img/girl.webp" as="image" type="image/webp">
 <script type="module" src="/src/main.ts"></script>
 </head>
 <body>
+<canvas id="fx" aria-hidden="true"></canvas>
 <a class="skip" href="#main">Перейти к содержимому</a>
 <div class="demo-bar">Демо-проект · клиника вымышленная</div>
 <header class="site-header">
   <div class="wrap head-row">
-    <a class="wordmark" href="#plate">ЛИНИЯ</a>
-    <a class="btn btn-primary btn-sm" href="#contacts" data-book>Записаться</a>
+    <a class="wordmark" href="#top">ЛИНИЯ</a>
+    <nav class="nav" aria-label="Основная">
+      <a href="#about">О клинике</a><a href="#services">Услуги</a><a href="#face">Карта лица</a><a href="#plans">Курсы</a><a href="#journal">Журнал</a><a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-ghost btn-sm" href="#contacts" data-book>Записаться</a>
   </div>
 </header>
-<nav class="side-index" aria-label="Разделы">
-  <ol>
-    <li><a href="#plate" data-sec="plate"><span class="sr-only">Титульный лист </span>I</a></li>
-    <li><a href="#face" data-sec="face"><span class="sr-only">Лицо </span>II</a></li>
-    <li><a href="#journal" data-sec="journal"><span class="sr-only">Журнал </span>III</a></li>
-    <li><a href="#index" data-sec="index"><span class="sr-only">Указатель </span>IV</a></li>
-    <li><a href="#visit" data-sec="visit"><span class="sr-only">Визит </span>V</a></li>
-    <li><a href="#team" data-sec="team"><span class="sr-only">Специалисты </span>VI</a></li>
-    <li><a href="#faq" data-sec="faq"><span class="sr-only">Вопросы </span>VII</a></li>
-    <li><a href="#contacts" data-sec="contacts"><span class="sr-only">Контакты </span>VIII</a></li>
-  </ol>
-</nav>
 <main id="main">
 
-  <section class="sec plate-sec" id="plate" aria-labelledby="h1">
-    <div class="wrap grid-12">
-      <div class="plate-text">
-        <p class="kicker">Атлас кожи · Хабаровск</p>
-        <h1 id="h1"><span class="ln"><span>Кожа в климате</span></span> <span class="ln"><span><em>Дальнего Востока</em></span></span></h1>
-        <p class="lead">Погода, сезонный уход и план визита в одном месте</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#face">Собрать план визита</a>
-          <a class="btn btn-secondary" href="#journal">Читать журнал</a>
-        </div>
-      </div>
-      <figure class="plate-fig">
-        <div class="frame"><div id="still-life"></div></div>
-        <figcaption><span class="cap-no">Таблица А.</span> Натюрморт ухода
-          <ol class="legend" id="still-legend">
-            <li data-n="1"><span class="num">1</span> Пипетка — сыворотки</li>
-            <li data-n="2"><span class="num">2</span> Баночка — кремы</li>
-            <li data-n="3"><span class="num">3</span> Солнце — УФ-индекс</li>
-            <li data-n="4"><span class="num">4</span> Лист — растительные экстракты</li>
-            <li data-n="5"><span class="num">5</span> Ампула — концентраты</li>
-          </ol>
-        </figcaption>
-      </figure>
+  <section class="hero" id="top" aria-labelledby="h1">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <h1 id="h1" class="hero-word"><span class="hw" aria-hidden="true"><span>Л</span><span>И</span><span>Н</span><span>И</span><span>Я</span></span><span class="sr-only">ЛИНИЯ: клиника эстетической косметологии</span></h1>
+    <img class="hero-girl" src="/src/assets/img/girl.webp" width="1000" height="960" alt="3D-иллюстрация: девушка с чёрным маникюром рассматривает ногти" fetchpriority="high">
+    <div class="hero-left">
+      <p class="hero-lead">Клиника эстетической косметологии в Хабаровске. Цена и состав визита понятны до звонка.</p>
       <aside class="obs" id="obs" aria-label="Наблюдение дня">
-        <p class="kicker">Наблюдение дня · Хабаровск <span class="obs-tag" id="obs-tag">пример</span></p>
-        <dl class="obs-grid">
-          <div><dt>Температура</dt><dd class="num"><span id="obs-t">−12</span>°</dd></div>
-          <div><dt>Влажность</dt><dd class="num"><span id="obs-h">48</span>%</dd></div>
-          <div><dt>УФ-индекс</dt><dd class="num" id="obs-uv">1</dd></div>
-        </dl>
+        <p class="obs-line"><span class="obs-tag" id="obs-tag">пример</span> Хабаровск: <b><span id="obs-t">−12</span>°</b> · влажность <b><span id="obs-h">48</span>%</b> · УФ <b id="obs-uv">1</b></p>
         <p class="obs-tip" id="obs-tip"><strong>Мороз:</strong> защитный крем заранее, уход за губами.</p>
         <p class="obs-note">Общие рекомендации, не заменяют консультацию.</p>
       </aside>
     </div>
+    <div class="hero-right">
+      <a class="btn btn-grad" href="#face">Собрать план визита <span aria-hidden="true">→</span></a>
+      <a class="btn btn-ghost" href="#contacts" data-book>Записаться</a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">листайте</div>
   </section>
 
-  <section class="sec" id="face" aria-labelledby="h-face">
+  <div class="marquee" id="m-words" aria-hidden="true"><div class="marquee-track"></div></div>
+
+  <section class="sec" id="about" aria-labelledby="h-about">
+    <div class="wrap about-in">
+      <p class="kicker">О клинике</p>
+      <h2 id="h-about" class="display">О клинике</h2>
+      <p class="about-text">ЛИНИЯ показывает план и цену до первого визита. Выберите зону на карте лица, соберите план процедур и запишитесь в мессенджер. Консультация, процедуры и контроль собраны в один понятный маршрут, а сезонные советы привязаны к климату Дальнего Востока.</p>
+      <a class="btn btn-grad" href="#services">Смотреть услуги <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="gallery-sec" id="gallery" aria-label="Галерея 3D-иллюстраций">
+    <div class="scatter" id="scatter" aria-hidden="true"></div>
+  </section>
+
+  <section class="sec light" id="services" aria-labelledby="h-services">
     <div class="wrap">
-      <header class="sec-head"><span class="roman" aria-hidden="true">II</span><div><p class="kicker">Таблица I · Лицо</p><h2 id="h-face">Что вы хотите <em>изменить</em>?</h2><p class="sub">Нажмите на зону, чтобы увидеть процедуры и цены</p></div></header>
-      <div class="map-grid">
-        <figure class="face-col">
-          <div class="frame face-frame"><div class="face" id="face-fig"></div></div>
-          <figcaption><span class="cap-no">Таблица I.</span> Лицо</figcaption>
-          <ul class="zone-list" aria-label="Зоны лица">
-            <li><button class="zone-btn" data-zone="forehead">Лоб</button></li>
-            <li><button class="zone-btn" data-zone="eyes">Область глаз</button></li>
-            <li><button class="zone-btn" data-zone="cheeks">Скулы и средняя треть</button></li>
-            <li><button class="zone-btn" data-zone="lips">Губы и подбородок</button></li>
-            <li><button class="zone-btn" data-zone="jawline">Овал лица и шея</button></li>
-            <li><button class="zone-btn" data-zone="skin">Кожа лица целиком</button></li>
-          </ul>
-        </figure>
-        <div class="side-col">
-          <div class="panel" id="zone-panel"></div>
-          <div class="panel plan-box" id="plan-box"></div>
+      <h2 id="h-services" class="display center">Услуги</h2>
+      <ol class="svc" id="svc-list"></ol>
+      <p class="svc-note">Цены условные, демо. Путь визита: консультация, план, процедура, контроль.</p>
+    </div>
+  </section>
+
+  <section class="sec face-sec" id="face" aria-labelledby="h-face">
+    <div class="wrap">
+      <h2 id="h-face" class="display center">Карта <span class="grad-text">лица</span></h2>
+      <p class="sub center">Нажмите на зону, чтобы увидеть процедуры и цены</p>
+    </div>
+    <div class="wrap map-grid">
+      <div class="face-col">
+        <div class="portrait" id="portrait">
+          <img src="/src/assets/img/girl.webp" width="1000" height="960" alt="" aria-hidden="true" loading="lazy">
+          <div class="glows" aria-hidden="true">
+            <i data-glow="forehead" style="--x:47%;--y:30%;--w:36%;--h:13%"></i>
+            <i data-glow="eyes" style="--x:50%;--y:47%;--w:46%;--h:15%"></i>
+            <i data-glow="cheeks" style="--x:36%;--y:57%;--w:17%;--h:15%"></i>
+            <i data-glow="cheeks" style="--x:65%;--y:57%;--w:17%;--h:15%"></i>
+            <i data-glow="lips" style="--x:51.5%;--y:58%;--w:14%;--h:6.5%"></i>
+            <i data-glow="jawline" style="--x:50%;--y:70%;--w:42%;--h:14%"></i>
+          </div>
         </div>
+        <ul class="zone-list" aria-label="Зоны лица">
+          <li><button class="zone-btn" data-zone="forehead">Лоб</button></li>
+          <li><button class="zone-btn" data-zone="eyes">Область глаз</button></li>
+          <li><button class="zone-btn" data-zone="cheeks">Скулы и средняя треть</button></li>
+          <li><button class="zone-btn" data-zone="lips">Губы и подбородок</button></li>
+          <li><button class="zone-btn" data-zone="jawline">Овал лица и шея</button></li>
+          <li><button class="zone-btn" data-zone="skin">Кожа лица целиком</button></li>
+        </ul>
       </div>
-      <div class="plan-sec" id="plan">
-        <h3>План визита по неделям</h3>
-        <div class="plan-full" id="plan-full"></div>
-      </div>
+      <div class="side-col"><div class="panel" id="zone-panel"></div></div>
+    </div>
+    <div class="wrap plan-sec" id="plan">
+      <h3 class="display sm">План визита</h3>
+      <div class="plan-grid"><div class="plan-box" id="plan-box"></div><div class="plan-full" id="plan-full"></div></div>
     </div>
   </section>
 
-  <section class="sec alt" id="journal" aria-labelledby="h-journal">
-    <div class="wrap">
-      <header class="sec-head"><span class="roman" aria-hidden="true">III</span><div><p class="kicker">Журнал</p><h2 id="h-journal">Читайте <em>перед визитом</em></h2></div></header>
-      <ul class="cards" id="journal-list"></ul>
-      <p class="sample-note">Текст-образец. В рабочей версии материалы пишет и проверяет врач клиники.</p>
-    </div>
+  <section class="plans-sec" id="plans" aria-labelledby="h-plans">
+    <div class="wrap plans-head"><h2 id="h-plans" class="display center">Курсы</h2><p class="sub center">Три примера готового плана. Добавьте любой одним нажатием, состав можно менять. Цены условные, демо.</p></div>
+    <div class="hpin" id="hpin"><div class="htrack" id="stack"></div></div>
   </section>
 
-  <section class="sec" id="index" aria-labelledby="h-index">
-    <div class="wrap">
-      <header class="sec-head"><span class="roman" aria-hidden="true">IV</span><div><p class="kicker">Указатель</p><h2 id="h-index">Словарь <em>терминов</em></h2><p class="sub">Процедуры, ингредиенты и понятия, которые встречаются на консультации</p></div></header>
-      <div class="gloss-tools"><label class="field-l" for="gloss-q">Поиск по указателю</label><input id="gloss-q" class="input" type="search" placeholder="Например: кислота" autocomplete="off"><div class="chips" id="gloss-kinds" role="group" aria-label="Вид записи"></div><p class="muted" id="gloss-count" aria-live="polite"></p></div>
+  <section class="sec" id="journal" aria-labelledby="h-journal">
+    <div class="wrap"><h2 id="h-journal" class="display center">Читайте<br><span class="grad-text">перед визитом</span></h2></div>
+    <div class="wrap"><ul class="collage" id="journal-rows"></ul><p class="sample-note center">Текст-образец. В рабочей версии материалы пишет и проверяет врач клиники.</p></div>
+  </section>
+
+  <section class="sec light" id="index" aria-labelledby="h-index">
+    <div class="wrap narrow">
+      <h2 id="h-index" class="display center">Словарь</h2>
+      <p class="sub center">Процедуры, ингредиенты и понятия, которые встречаются на консультации</p>
+      <div class="gloss-tools"><label class="field-l" for="gloss-q">Поиск по словарю</label><input id="gloss-q" class="u-input" type="search" placeholder="Например: кислота" autocomplete="off"><div class="chips" id="gloss-kinds" role="group" aria-label="Вид записи"></div><p class="muted" id="gloss-count" aria-live="polite"></p></div>
       <ul class="gloss" id="gloss-list"></ul>
       <p class="sample-note">Текст-образец. В рабочей версии материалы пишет и проверяет врач клиники.</p>
     </div>
   </section>
 
-  <section class="sec visit-sec" id="visit" aria-labelledby="h-visit">
-    <div class="wrap">
-      <header class="sec-head"><span class="roman" aria-hidden="true">V</span><div><p class="kicker">Как проходит визит</p><h2 id="h-visit">Четыре шага, <em>без спешки</em></h2></div></header>
-      <ol class="steps">
-        <li><h3>Консультация</h3><p>Врач задаёт вопросы, осматривает кожу и обсуждает ваши пожелания.</p></li>
-        <li><h3>План</h3><p>Вместе выбираете процедуры, порядок и сроки. Стоимость называется до начала.</p></li>
-        <li><h3>Процедура</h3><p>Если вы готовы, первая процедура проходит в тот же день или в удобное время.</p></li>
-        <li><h3>Контроль</h3><p>Через оговорённый срок врач оценивает, как всё прошло, и обсуждает дальнейшие шаги.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="sec" id="team" aria-labelledby="h-team">
-    <div class="wrap">
-      <header class="sec-head"><span class="roman" aria-hidden="true">VI</span><div><p class="kicker">Специалисты</p><h2 id="h-team">Кто <em>вас примет</em></h2></div></header>
-      <ul class="team">
-        <li><div class="spot" data-spot="dropper"></div><h3>Врач-косметолог</h3><p class="muted">Образование и сертификаты указывает клиника</p></li>
-        <li><div class="spot" data-spot="lens"></div><h3>Врач-дерматолог</h3><p class="muted">Образование и сертификаты указывает клиника</p></li>
-        <li><div class="spot" data-spot="quill"></div><h3>Косметолог-эстетист</h3><p class="muted">Образование и сертификаты указывает клиника</p></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="sec alt" id="faq" aria-labelledby="h-faq">
+  <section class="sec" id="faq" aria-labelledby="h-faq">
     <div class="wrap narrow">
-      <header class="sec-head"><span class="roman" aria-hidden="true">VII</span><div><p class="kicker">Вопросы</p><h2 id="h-faq">Что <em>спрашивают чаще</em></h2></div></header>
+      <h2 id="h-faq" class="display center">Вопросы</h2>
       <div class="faq">
         <details><summary>Сколько длится консультация?</summary><p>Обычно около 30 минут. Точное время называет администратор при записи.</p></details>
         <details><summary>Как подготовиться к визиту?</summary><p>Специальной подготовки для консультации не нужно. Перед процедурой врач скажет, что учесть именно в вашем случае.</p></details>
-        <details><summary>Можно ли записаться без звонка?</summary><p>Да. Выберите день и время на сайте, укажите удобный мессенджер, и администратор свяжется с вами там.</p></details>
+        <details><summary>Можно ли записаться без звонка?</summary><p>Да. Выберите день и время в форме ниже, укажите удобный мессенджер, и администратор свяжется с вами там.</p></details>
         <details><summary>Что входит в план визита?</summary><p>Консультация, выбранные процедуры, ориентировочные сроки и стоимость. Итог уточняется после осмотра.</p></details>
         <details><summary>Можно ли изменить план после консультации?</summary><p>Да. План предварительный, врач может скорректировать его по результатам осмотра.</p></details>
         <details><summary>Как вы обрабатываете мои данные?</summary><p>Имя и телефон нужны только для связи по записи. Подробности клиника указывает в политике обработки данных.</p></details>
@@ -155,27 +142,26 @@
     </div>
   </section>
 
-  <section class="sec on-moss moss-sec" id="contacts" aria-labelledby="h-contacts">
+  <section class="sec light contacts-sec" id="contacts" aria-labelledby="h-contacts">
     <div class="wrap contacts-grid">
-      <div>
-        <header class="sec-head"><span class="roman" aria-hidden="true">VIII</span><div><p class="kicker">Контакты и запись</p><h2 id="h-contacts">Приходите <em>на консультацию</em></h2></div></header>
-        <p class="addr">Хабаровск, ул. Примерная, 1</p>
-        <p class="on-moss-soft">Ежедневно 10:00–20:00</p>
-        <div class="actions"><a class="btn btn-primary" href="#contacts" data-book>Записаться</a><a class="btn btn-light" href="#">Telegram</a><a class="btn btn-light" href="#">WhatsApp</a><a class="btn btn-light" href="#">Max</a><a class="btn btn-light" href="tel:+70000000000">Позвонить</a></div>
-        <p class="on-moss-soft rating">Рейтинг и отзывы подключаются из 2ГИС</p>
+      <div class="contacts-left">
+        <h2 id="h-contacts" class="display">Давайте<br>знакомиться</h2>
+        <p class="addr"><a href="tel:+70000000000" class="u-link">+7 (000) 000-00-00</a></p>
+        <p class="muted">Хабаровск, ул. Примерная, 1 · ежедневно 10:00–20:00</p>
+        <p class="muted rating">Рейтинг и отзывы подключаются из 2ГИС</p>
       </div>
-      <figure class="frame frame-moss"><svg class="schema-map" viewBox="0 0 400 300" aria-hidden="true"><path d="M0 220H400M0 120H400M120 0V300M280 0V300M0 40L400 260"/><circle cx="200" cy="120" r="8"/></svg></figure>
+      <div class="book-wrap" id="book-wrap"></div>
     </div>
   </section>
 </main>
 <div class="sr-only" id="plan-live" aria-live="polite"></div>
-<div class="mobile-bar" id="mobile-bar" inert><span data-info></span><a class="btn btn-primary btn-sm" href="#contacts" data-book>Записаться</a></div>
-<footer class="site-footer on-moss">
-  <div class="wrap">
-    <p class="wordmark">ЛИНИЯ</p>
-    <p>Демо-проект. Клиника, врачи, цены и тексты вымышлены</p>
-    <p class="foot-links"><a href="#">Политика обработки данных</a> <span>Лицензия указывается клиникой</span></p>
-    <p class="foot-small">© 2026 ЛИНИЯ · Демо-проект · клиника вымышленная</p>
+<div class="mobile-bar" id="mobile-bar" inert><span data-info></span><a class="btn btn-grad btn-sm" href="#contacts" data-book>Записаться</a></div>
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <p class="foot-word" aria-hidden="true">ЛИНИЯ</p>
+    <div><h3>Соцсети</h3><ul><li><a href="#">Telegram</a></li><li><a href="#">WhatsApp</a></li><li><a href="#">Max</a></li></ul></div>
+    <div><h3>Контакты</h3><ul><li><a href="tel:+70000000000">+7 (000) 000-00-00</a></li><li>Хабаровск, ул. Примерная, 1</li><li>Ежедневно 10:00–20:00</li></ul></div>
+    <p class="foot-small">Демо-проект. Клиника, врачи, цены и тексты вымышлены · <a href="#">Политика обработки данных</a> · Лицензия указывается клиникой · © 2026 ЛИНИЯ · Демо-проект · клиника вымышленная</p>
   </div>
 </footer>
 </body>

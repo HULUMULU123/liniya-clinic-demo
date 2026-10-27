@@ -24,7 +24,7 @@ export function initGlossary() {
       const p = proc ? procedures.find((x) => x.id === proc) : null;
       const inPlan = proc ? store.has(proc) : false;
       const acts = [
-        g.links.length ? `<button class="btn btn-secondary btn-sm" data-zone-go="${g.links[0]}">Показать на карте</button>` : '',
+        g.links.length ? `<button class="btn btn-line btn-sm" data-zone-go="${g.links[0]}">Показать на карте</button>` : '',
         p ? `<button class="btn ${inPlan ? 'btn-secondary' : 'btn-primary'} btn-sm" data-add="${p.id}" aria-pressed="${inPlan}">${inPlan ? 'Убрать из плана' : 'Добавить в план'}</button>` : '',
       ].join('');
       return `<li><h3>${g.term} <span class="kind">${g.kind}</span></h3><p>${g.short}</p>${acts ? `<div class="gloss-acts">${acts}</div>` : ''}</li>`;

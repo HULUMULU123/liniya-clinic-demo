@@ -1,13 +1,15 @@
+// Меню без плашки: белый текст с режимом difference читается на тёмных и светлых секциях; прячется при прокрутке вниз
 export function initHeader() {
   const header = document.querySelector('.site-header');
-  const onScroll = () => header?.classList.toggle('scrolled', scrollY > 24);
+  let last = scrollY;
+  const onScroll = () => {
+    const y = scrollY;
+    header?.classList.toggle('scrolled', y > 24);
+    header?.classList.toggle('hide', y > 240 && y > last + 4);
+    if (y < last - 4) header?.classList.remove('hide');
+    last = y;
+  };
   addEventListener('scroll', onScroll, { passive: true });
+  document.addEventListener('focusin', (e) => { if ((e.target as HTMLElement).closest('.site-header')) header?.classList.remove('hide'); });
   onScroll();
-
-  const links = [...document.querySelectorAll<HTMLAnchorElement>('.side-index a')];
-  const secs = links.map((l) => document.getElementById(l.dataset.sec!)!).filter(Boolean);
-  const io = new IntersectionObserver((en) => {
-    en.forEach((e) => { if (e.isIntersecting) links.forEach((l) => l.classList.toggle('active', l.dataset.sec === e.target.id)); });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  secs.forEach((s) => io.observe(s));
 }
